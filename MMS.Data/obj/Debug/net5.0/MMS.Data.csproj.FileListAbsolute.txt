@@ -1,0 +1,12 @@
+/Users/dianem/Desktop/at/MMS.Data/bin/Debug/net5.0/MMS.Data.deps.json
+/Users/dianem/Desktop/at/MMS.Data/bin/Debug/net5.0/MMS.Data.dll
+/Users/dianem/Desktop/at/MMS.Data/bin/Debug/net5.0/ref/MMS.Data.dll
+/Users/dianem/Desktop/at/MMS.Data/bin/Debug/net5.0/MMS.Data.pdb
+/Users/dianem/Desktop/at/MMS.Data/obj/Debug/net5.0/MMS.Data.csprojAssemblyReference.cache
+/Users/dianem/Desktop/at/MMS.Data/obj/Debug/net5.0/MMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dianem/Desktop/at/MMS.Data/obj/Debug/net5.0/MMS.Data.AssemblyInfoInputs.cache
+/Users/dianem/Desktop/at/MMS.Data/obj/Debug/net5.0/MMS.Data.AssemblyInfo.cs
+/Users/dianem/Desktop/at/MMS.Data/obj/Debug/net5.0/MMS.Data.csproj.CoreCompileInputs.cache
+/Users/dianem/Desktop/at/MMS.Data/obj/Debug/net5.0/MMS.Data.dll
+/Users/dianem/Desktop/at/MMS.Data/obj/Debug/net5.0/ref/MMS.Data.dll
+/Users/dianem/Desktop/at/MMS.Data/obj/Debug/net5.0/MMS.Data.pdb

@@ -1,0 +1,48 @@
+@model IList<Movie>
+
+<partial name="_BreadCrumbs" model=@(new [] { 
+    ("/", "Home"), 
+    ("","Movies") 
+})>
+
+
+<h3 class="mb-3">Movie List</h3>
+
+<a class="btn btn-sm btn-primary my-3" asp-controller="Movie" asp-action="Create">
+    <i class="bi bi-camera-reels-fill"></i> Create
+</a>     
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Year</th>
+            <th>Genre</th> 
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var m in Model) {
+            <tr>
+                <td>@m.Id</td>
+                <td>@m.Title</td>
+                <td>@m.Director</td>
+                <td>@m.Year</td>
+                <td>@m.Genre</td>
+                
+                <td>
+                    <!-- Add View link -->
+                    <a asp-controller="movie" asp-action="Details" asp-route-id=@m.Id><i class="bi bi-film"></i></a>                      
+                    <!-- Add edit link  -->
+                    <a asp-controller="movie" asp-action="Edit" asp-route-id=@m.Id><i class="bi-pen"></i></a>   
+                    <!-- Add delete link -->
+                    <a asp-controller="movie" asp-action="Delete" asp-route-id=@m.Id><i class="bi-trash"></i></a>   
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+

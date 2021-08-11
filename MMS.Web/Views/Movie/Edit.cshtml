@@ -1,0 +1,105 @@
+@model Movie
+
+<partial name="_Breadcrumbs" model=@(new [] { 
+    ("/", "Home"), 
+    ("/movie", "Movies"),
+    ($"/movie/details/{Model.Id}", $"{Model.Id}"), 
+    ("","Edit") 
+})>
+
+
+
+
+<h3 class="mb-4">Edit Movie</h3>
+
+<div class="card rounded shadow p-3">
+
+    <form asp-action="Edit">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+         <input type="hidden" asp-for="Id" class="form-control"/>
+          <!-- Rating is read only cannot be edited -->
+
+         <input type="hidden" asp-for="Rating" class="form-control"/>    
+
+          <div class="form-group">
+            <label asp-for="Title" class="control-label"></label>
+            <input asp-for="Title" class="form-control"/>
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+    
+        <div class="form-group">
+            <label asp-for="Director" class="control-label"></label>
+            <input asp-for="Director" class="form-control"/>
+            <span asp-validation-for="Director" class="text-danger"></span>
+        </div>
+
+        <!--move Year and Duration and Budget input groups in 3 columns in single row -->      
+        <div class="row">
+
+            <div class="form-group col-3">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control"/>
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-3">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control"/>
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-3">
+                <label asp-for="Budget" class="control-label"></label>
+                <input asp-for="Budget" class="form-control"/>
+                <span asp-validation-for="Budget" class="text-danger"></span>
+
+            </div>
+            
+            <!-- add drop down list for genre -->
+                
+            <div class="form-group col-3"> 
+                <label asp-for="Genre" class="control-label"></label>
+                <select asp-for="Genre" class="form-control" asp-items="@Html.GetEnumSelectList<Genre>()"><option>Select Genre</option></select>
+                <span asp-validation-for="Genre" class="text-danger"></span>
+
+            </div>   
+        
+        </div> 
+
+        <!-- add PosterUrl input group - ensure input field type is url -->
+        <div class="form-group">
+            <label asp-for="PosterUrl" class="control-label"></label>
+            <input type="url" asp-for="PosterUrl" class="form-control"/>
+            <span asp-validation-for="PosterUrl" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Cast" class="control-label"></label>
+            <input asp-for="Cast" class="form-control"/>
+            <span asp-validation-for="Cast" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Plot" class="control-label"></label>
+            <textarea rows="5" asp-for="Plot" class="form-control"></textarea>
+            <span asp-validation-for="Plot" class="text-danger"></span>
+        </div>
+
+        
+        
+        <!-- submit button and cancel link which navigates to Details to view editied movie  -->
+        
+        <div class="form-group">
+            <input type="submit" value="Save Changes" class="btn btn-primary"/>
+            <a class="btn btn-secondary" asp-action="Details" asp-route-id=@Model.Id>Cancel</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}                                         

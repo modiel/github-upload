@@ -1,0 +1,29 @@
+@model AboutViewModel
+<partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("","About") })>
+
+    <div class="card text-center shadow">
+        <div class="card-header bg-warning">
+            <h2>@Model.Title</h2>
+        </div>
+        <div class="card-body">
+            <div class="card-body">
+                <h5 class="card-title">Mission Statement</h5>
+                <p><em>@Model.Message</em></p>
+
+
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p>“I'm made out of sage and I am a sage, so it works out pretty well,”</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Keanu Reeves discussing <cite title="Source Title"> The SpongeBob Movie: Sponge on the Run </cite>
+                    </figcaption>
+                </figure>
+                <img src="https://www.gamebyte.com/wp-content/uploads/2019/11/spongebob-keanu-reeves-1a-1-768x512.jpg"
+                    class="img-fluid">
+            </div>
+            <div class="card-footer text-muted">
+                <div>Formed on @Model.FormedString <cite title="Source Title">(@Model.Days days ago)</cite></div>
+            </div>
+        </div>
+    </div>
